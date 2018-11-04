@@ -5,7 +5,7 @@
 from setuptools import setup, find_packages
 
 
-with open('README.rst') as f:
+with open('README.md') as f:
     readme = f.read()
 
 with open('LICENSE') as f:
@@ -13,7 +13,7 @@ with open('LICENSE') as f:
 
 setup(
     name='norutil',
-    version='0.0.1',
+    version='0.0.2',
     description='Prototype package for my personal development',
     long_description=readme,
     author='Motoi Komatsu',
@@ -23,7 +23,8 @@ setup(
     packages=find_packages(exclude=('tests', 'docs')),
     install_requires=[
         'nose',
-        'sphinx'
+        'sphinx',
+        'twine'
     ]
 )
 

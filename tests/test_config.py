@@ -1,7 +1,8 @@
+import os
 import unittest
 
 from norutil.config import get_config
-from norutil.definitions import TEST_CONFIG_PATH
+from norutil.definitions import TEST_CONFIG_PATH, ROOT_DIR
 from norutil.util import remove_path_if_exists, copy_config_ini_from_sample
 from tests.base import BaseTest
 
@@ -13,7 +14,7 @@ class ConfigTest(BaseTest):
         self.assertEqual(config.sections(), [])
 
     def test_read_existing_config_file(self):
-        copy_config_ini_from_sample()
+        copy_config_ini_from_sample(os.path.join(ROOT_DIR, 'config.ini.sample'), TEST_CONFIG_PATH)
         config = get_config(TEST_CONFIG_PATH)
         self.assertEqual(config.sections(), [
             'memo',

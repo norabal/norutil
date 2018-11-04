@@ -1,8 +1,6 @@
 import os
 import shutil
 
-from .definitions import ROOT_DIR, TEST_CONFIG_PATH
-
 
 def adjust_for_expanduser(dir_path):
     """replace '~' as $HOME path for python os module"""
@@ -26,7 +24,6 @@ def make_empty_dir(dir_path):
     os.mkdir(dir_path)
 
 
-def copy_config_ini_from_sample():
+def copy_config_ini_from_sample(ini_sample, test_config_path):
     """'test_config.ini' will be created from 'config.ini.sample'"""
-    source = os.path.join(ROOT_DIR, 'config.ini.sample')
-    shutil.copyfile(source, TEST_CONFIG_PATH)
+    shutil.copyfile(ini_sample, test_config_path)
