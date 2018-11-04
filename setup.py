@@ -12,14 +12,18 @@ with open('LICENSE') as f:
     license = f.read()
 
 setup(
-    name='sample',
-    version='0.1.0',
-    description='Sample package for Python-Guide.org',
+    name='norutil',
+    version='0.0.1',
+    description='Prototype package for my personal development',
     long_description=readme,
-    author='Kenneth Reitz',
-    author_email='me@kennethreitz.com',
-    url='https://github.com/kennethreitz/samplemod',
+    author='Motoi Komatsu',
+    author_email='norabal.works@gmail.com',
+    url='https://github.com/norabal/norutil',
     license=license,
-    packages=find_packages(exclude=('tests', 'docs'))
+    packages=find_packages(exclude=('tests', 'docs')),
+    install_requires=[
+        'nose',
+        'sphinx'
+    ]
 )
 
